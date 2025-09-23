@@ -8,7 +8,7 @@ public class VariablePractice extends OpMode {
 
     @Override
     public void init() {
-    int teamNumber = 13;
+    int teamNumber = 27124;
     int motorAngle = 54;
     double motorSpeed = 0.8;
     boolean hasBall = false;
