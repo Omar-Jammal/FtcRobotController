@@ -12,6 +12,7 @@ public class VariablePractice extends OpMode {
     public void init() {
         int teamNumber = 27124;
         int motorAngle = 54;
+        int grade = 9;
         double motorSpeed = 0.8;
         boolean hasBall = false;
         String teamName = "Robo Owls";
@@ -21,6 +22,7 @@ public class VariablePractice extends OpMode {
         telemetry.addData("Motor Angle", motorAngle);
         telemetry.addData("Has Ball", hasBall);
         telemetry.addData("Team Name", teamName);
+        telemetry.addData("Grade", grade);
     }
 
     @Override

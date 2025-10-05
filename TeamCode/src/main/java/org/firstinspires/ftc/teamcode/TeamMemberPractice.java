@@ -1,15 +1,18 @@
 package org.firstinspires.ftc.teamcode;
 
+import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
+@Disabled
 @TeleOp
 public class TeamMemberPractice extends OpMode {
     boolean initDone;
 
+
     @Override
     public void init() {
-        telemetry.addData("Init", initDone);
+        telemetry.addData("Init is Done", initDone);
         initDone = true;
     }
 
@@ -24,7 +27,7 @@ public class TeamMemberPractice extends OpMode {
 
     @Override
     public void loop() {
-        telemetry.addData("Init", initDone);
+        telemetry.addData("Init is Done", initDone);
 
         double yAxis = gamepad1.left_stick_y;
         telemetry.addData("Y Stick Normal", yAxis);
@@ -32,4 +35,6 @@ public class TeamMemberPractice extends OpMode {
         yAxis = squareInputWithSign(yAxis);
         telemetry.addData("Y Stick Modified", yAxis);
     }
+
+
 }
