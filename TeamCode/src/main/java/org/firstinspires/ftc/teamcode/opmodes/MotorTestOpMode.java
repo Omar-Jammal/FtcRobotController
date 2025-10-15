@@ -13,11 +13,10 @@ public class MotorTestOpMode extends OpMode {
     }
     @Override
     public void loop() {
-        if (gamepad1.a) {
+        if (gamepad1.b) {
             board.setMotorSpeed(1);
         }
         
     }
 
  }
- 
