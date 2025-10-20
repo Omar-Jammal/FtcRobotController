@@ -1,7 +1,6 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
-
 import org.firstinspires.ftc.teamcode.mechanisms.ArcadeDrive;
 
 public class ArcadeDriveOpMode extends OpMode {
@@ -18,7 +17,6 @@ public class ArcadeDriveOpMode extends OpMode {
         throttle = -gamepad1.left_stick_y;
         spin = gamepad1.left_stick_x;
 
-        drive.drive(throttle, spin);;
+        drive.drive(throttle, spin);
     }
 }
-
