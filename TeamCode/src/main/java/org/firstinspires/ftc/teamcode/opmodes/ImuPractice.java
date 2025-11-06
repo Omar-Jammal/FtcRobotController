@@ -25,7 +25,7 @@ public class ImuPractice extends OpMode {
             controlHubIMU.setMotor(0.0);
         }
         else if (heading > 0.5) {
-            controlHubIMU.setMotor(0.5);
+            controlHubIMU.setMotor(0.5); 
         }
         else {
             controlHubIMU.setMotor(-0.5);

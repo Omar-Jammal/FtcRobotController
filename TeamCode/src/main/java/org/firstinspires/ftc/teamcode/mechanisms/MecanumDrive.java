@@ -10,22 +10,21 @@ import org.firstinspires.ftc.robotcore.external.navigation.AngleUnit;
 
 public class MecanumDrive {
 
-    private DcMotor frontLeftMotor, frontRightMotor;
     private IMU imu;
 
     public void init(HardwareMap hwMap) {
-        frontLeftMotor = hwMap.get(DcMotor.class, "front_left_motor");
-//        backLeftMotor = hwMap.get(DcMotor.class, "back_left_motor");
-        frontRightMotor = hwMap.get(DcMotor.class, "front_right_motor");
-//        backRightMotor = hwMap.get(DcMotor.class, "back_right_motor");
-//
-//        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
-//        backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        DcMotor frontLeftMotor = hwMap.get(DcMotor.class, "front_left_motor");
+        DcMotor backLeftMotor = hwMap.get(DcMotor.class, "back_left_motor");
+        DcMotor frontRightMotor = hwMap.get(DcMotor.class, "front_right_motor");
+        DcMotor backRightMotor = hwMap.get(DcMotor.class, "back_right_motor");
+
+        frontLeftMotor.setDirection(DcMotor.Direction.REVERSE);
+        backLeftMotor.setDirection(DcMotor.Direction.REVERSE);
 
         frontLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        backLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backLeftMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         frontRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
-//        backRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
+        backRightMotor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
 
         imu = hwMap.get(IMU.class, "imu");
 
@@ -45,7 +44,7 @@ public class MecanumDrive {
         double backRightPower = forward + strafe - rotate;
 
         double maxPower = 1.0;
-        // Could put maxSpeed if we have outreaches
+        double maxSpeed = 1.0;
 
         maxPower = Math.max(maxPower, Math.abs(frontLeftPower));
         maxPower = Math.max(maxPower, Math.abs(backLeftPower));

@@ -14,7 +14,6 @@ public class MecanumFieldOrientatedOpMode extends OpMode {
     @Override
     public void init() {
         drive.init(hardwareMap);
-
     }
 
     @Override
