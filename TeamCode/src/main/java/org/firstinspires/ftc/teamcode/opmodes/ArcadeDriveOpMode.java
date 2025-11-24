@@ -1,17 +1,16 @@
 package org.firstinspires.ftc.teamcode.opmodes;
 
-import com.qualcomm.robotcore.eventloop.opmode.Disabled;
 import com.qualcomm.robotcore.eventloop.opmode.OpMode;
 import com.qualcomm.robotcore.eventloop.opmode.TeleOp;
 
 import org.firstinspires.ftc.teamcode.mechanisms.ArcadeDrive;
 
-@Disabled
+
 @TeleOp
 public class ArcadeDriveOpMode extends OpMode {
     ArcadeDrive drive = new ArcadeDrive();
 
-    double throttle, spin;
+    double forward, rotate;
     @Override
     public void init(){
         drive.init(hardwareMap);
@@ -19,9 +18,13 @@ public class ArcadeDriveOpMode extends OpMode {
 
     @Override
     public void loop() {
-        throttle = -gamepad1.left_stick_x;
-        spin = gamepad1.left_stick_y;
+        forward = gamepad1.left_stick_y;
+        rotate = -gamepad1.right_stick_x;
 
-        drive.drive(throttle, spin);
+
+        telemetry.addData("Forward", forward);
+        telemetry.addData("Rotate", rotate);
+
+        drive.drive(rotate, forward);
     }
 }
