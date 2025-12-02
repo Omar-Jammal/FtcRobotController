@@ -10,7 +10,7 @@ public class MotorTest{
     private double ticksPerRev; //revolution
 
     public void init(HardwareMap hwMap) {
-        motor = hwMap.get(DcMotor.class, "front_right_motor");
+        motor = hwMap.get(DcMotor.class, "front_left_motor");
         motor.setMode(DcMotor.RunMode.RUN_USING_ENCODER);
         ticksPerRev = motor.getMotorType().getTicksPerRev();
 
